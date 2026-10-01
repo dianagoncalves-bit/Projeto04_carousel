@@ -1,31 +1,37 @@
-const mecanismo= document.getElementById("carousel");
-const telacarousel = document.getElementById("carousel");
-const bntEsquerda = document.querySelector('#btnEsquerda');
-const bntDireita = document.querySelector('#btnDireita');
+const btnEsquerda = document.querySelector('#btnEsquerda');
+const btnDireita = document.querySelector('#btnDireita');
+const telaCarrosel = document.getElementById('carousel'); 
 
-const cores = [
-    'var(--azul-300)',
-    'var(--rosa)',
-    'var(--vermelho-vinho)'
+const imagens = [
+    "url('./images/selwyn_kane.webp')",
+    "url('./images/cardan.jpg')",
+    "url('./images/wriothesley.jpg')"
 ];
 
-/*variavel acumuladora de valor*/
-let indiceAtual = 0;
-function atualizarCarrossel() {
-    telacarousel.style.backgroundColor = cores[indiceAtual];
-}
-bntDireita.addEventListener("click",() =>{
-    indiceAtual++;
-    if(indiceAtual>cores.length){
-        indiceAtual=0;
+let indiceatual = 0;
+
+function atualizarCarrosel(){
+    if (telaCarrosel) {
+        // 2. MUDANÇA: Mudamos de backgroundColor para backgroundImage
+        telaCarrosel.style.backgroundImage = imagens[indiceatual]; 
     }
+}
+
+btnDireita.addEventListener("click", () => {
+    indiceatual++;
+    if(indiceatual >= imagens.length){
+        indiceatual = 0;
+    }
+    atualizarCarrosel();
 });
 
-bntEsquerda.addEventListener("click",() =>{
-    indiceAtual--;
-    if(indiceAtual<0){
-        indiceAtual=cores.length-1;
+btnEsquerda.addEventListener("click", () => {
+    indiceatual--;
+    if(indiceatual < 0){
+        indiceatual = imagens.length - 1;
     }
-    atualizarCarrossel();
+    atualizarCarrosel();
 });
-atualizarCarrossel();
+
+// Inicializa a primeira imagem logo de cara assim que a página carregar
+atualizarCarrosel();
