@@ -4,7 +4,7 @@ const telaCarrosel = document.getElementById('carousel');
 
 const imagens = [
     "url('./images/selwyn_kane.webp')",
-    "url('./images/cardan.jpg')",
+    "url('./images/cardan02.jpg')",
     "url('./images/wriothesley.jpg')"
 ];
 
