@@ -1,0 +1,46 @@
+:root{
+    --azul-100:rgb(129, 215, 244);
+    --azul-200:rgb(0, 91, 196);
+    --azul-300:rgb(0, 4, 125);
+    --vermelho-vivo:red;
+    --vermelho-escuro:rgb(139, 6, 6);
+    --rosa:rgb(249, 89, 153);
+    --cinza:rgb(168, 159, 159);
+    --branco:white;
+}
+body{
+    width: 97.5vw;
+    min-width: 243px;
+    margin: 0;
+    padding: 0;
+    height: 96.5vh;
+    border: 0.03rem solid;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.03rem solid;
+    background-color: var(--cinza);
+    width: 70%;
+    height: 90%;
+    transition: background-color 0.4s ease-in-out;
+}
+#btnEsquerda, #btnDireita{ 
+    cursor: pointer;
+    padding: 1rem;
+    user-select: none;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+}
+.Carousel{ 
+    width: 100%;
+    height: 30%;
+}
